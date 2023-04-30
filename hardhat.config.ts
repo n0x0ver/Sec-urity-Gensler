@@ -9,9 +9,8 @@ import '@nomiclabs/hardhat-ethers'
 import '@nomicfoundation/hardhat-toolbox'
 
 const {
-  ARBITRUM_GOERLI_OWNER_PRIVATE_KEY = '',
-  ARBITRUM_OWNER_PRIVATE_KEY = '',
-  LOCAL_OWNER_PRIVATE_KEY = '',
+  ARBITRUM_GOERLI_DEPLOYER_PRIVATE_KEY = '',
+  ARBITRUM_DEPLOYER_PRIVATE_KEY = '',
 } = process.env;
 
 const config: HardhatUserConfig = {
@@ -31,12 +30,12 @@ const config: HardhatUserConfig = {
   networks: {
     arbitrumGoerli: {
       url: `https://arbitrum-goerli.infura.io/v3/22f0d956105b483ba08434cd7d0b86ec`,
-      accounts: [ARBITRUM_GOERLI_OWNER_PRIVATE_KEY],
-      tags: ['token', 'testnet'],
+      accounts: [ARBITRUM_GOERLI_DEPLOYER_PRIVATE_KEY],
+      tags: ['token'],
     },
     arbitrum: {
       url: '',
-      accounts: [ARBITRUM_OWNER_PRIVATE_KEY],
+      accounts: [ARBITRUM_DEPLOYER_PRIVATE_KEY],
       tags: ['token'],
     },
     ganache: {
